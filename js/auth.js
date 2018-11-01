@@ -59,7 +59,7 @@ $.ajax({
         application:{
             type: 'AT_SWEET_TV_Player'
         },
-         locale: 'uk'
+        locale: 'uk'
     }),
     // error: function(e) {
     //     console.log(e);
