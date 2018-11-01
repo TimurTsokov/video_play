@@ -47,30 +47,33 @@
 // }
 
 $.ajax({
-    // headers : {
-    //     'Accept-Encoding':'gzip'
-    // },
+
     type: 'POST',
     url: "https://tv-server.trinity-tv.net/server/TvServerService/Auth.json",
-    data: JSON.stringify({
+    data: {
+        'Accept-Encoding': 'gzip',
+        'auth-key': 'value'
+    },
+    device: JSON.stringify({
         mac: '34:FC:EF:D9:C4:B2',
         type: 'DT_SmartTV',
         sub_type: 'DST_TOSHIBA',
-        application:{
+        application: {
             type: 'AT_SWEET_TV_Player'
         },
         locale: 'uk'
     }),
-    // error: function(e) {
-    //     console.log(e);
-    // },
-    error: function (status) {
-        console.log(status)
+    error: function (e) {
+        console.log(e);
     },
     dataType: "json",
-    contentType: "application/json"
-});
+    contentType: "application/json",
 
+    success: function (status) {
+        console.log(status)
+    }
+
+});
 
 // $.ajax({
 //     beforeSend: function (xhr) {
