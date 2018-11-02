@@ -72,7 +72,7 @@ $.ajax({
 
     success: function (status, response, request) {
         var obj = JSON.parse(request.responseText);
-        console.log(obj);
+        console.log('Auth', obj);
         if (status == 500) {
             alert('Запрос неверно сформировани или ошибка сервера')
         }
@@ -81,43 +81,92 @@ $.ajax({
         console.log(e);
     }
     // success: function (resp, status, xhr) {
-    //
     //     var msg = "result is: " + resp.result + ", Start: " + resp.start + ", End: " + resp.end + ", issues: " + resp.issues;
-    //
     //     jQuery("#successPost").html(msg + " - STATUS: " + xhr.status + " " + xhr.statusText);
     // },
-    //
     // error: function (resp, status, xhr) {
     //     alert("Error: " + resp.e);
     //     jQuery("#errorPost").html("Error: " + resp.e + " - STATUS: " + xhr.status + " " + xhr.statusText);
     // }
-    // response: function () {
-    //
-    // }
+    // response: function () {}
 });
 
 //////////////////////////////////////////////////////////////////////////
 $.ajax({
     type: 'POST',
-    url: "https://tv-server.trinity-tv.net/server/TvServerService/GetChannels.json",
+    url: 'https://tv-server.trinity-tv.net/server/TvServerService/GetChannels.json',
     data: JSON.stringify({
-        channelList: {
-            auth: 'string',
-            need_icon: 'bool',
-            need_epg: 'bool',
-            need_offsets: 'bool',
-            need_categories: 'bool',
-            channels: 'int32',
-            epg_start_offset: 'int32',
-            epg_stop_offset: 'int32',
-            category: 'int32'
-        }
+        auth: 'bfae2c5899b64063dd9e4e3be9c96d30',
+        need_icons: true,
+        need_epg: true,
+        need_offsets: false,
+        need_categories: true
+        // epg_start_offset: 6,
+        // epg_stop_offset: 7,
+        // channels: 5,
+        // category: 9
     }),
     dataType: 'json',
-    contentType: "application/json"
+    contentType: "application/json",
+
+    success: function (status, response, request) {
+        var obj = JSON.parse(request.responseText);
+        console.log('GetChannels', obj);
+    }
+    // error: function (e) {
+    //     console.log(e);
+    // }
 });
+///////////////////////////////////////////////////////////////////
+$.ajax({
+    type: 'POST',
+    url: 'https://tv-server.trinity-tv.net/server/TvServerService/OpenStream.json',
+    data: JSON.stringify({
+        auth: 'bfae2c5899b64063dd9e4e3be9c96d30',
+        channel_id: 15,
+        offset_id: 3,
+        accept_scheme: 4,
+        first_batch_size: 5
 
+    }),
+    dataType: 'json',
+    contentType: "application/json",
 
+    success: function (status, response, request) {
+        var obj = JSON.parse(request.responseText);
+        console.log('OpenStream', obj);
+    }
+});
+////////////////////////////////////////////////
+$.ajax({
+    type: 'POST',
+    url: 'https://tv-server.trinity-tv.net/server/TvServerService/UpdateStream.json',
+    data: JSON.stringify({
+        auth: 'bfae2c5899b64063dd9e4e3be9c96d30',
+        stream_id: 2
+    }),
+    dataType: 'json',
+    contentType: "application/json",
+    success: function (status, response, request) {
+        var obj = JSON.parse(request.responseText);
+        console.log('UpdateStream', obj);
+    }
+});
+///////////////////////////////////////////////////////
+$.ajax({
+    type: 'POST',
+    url: 'https://tv-server.trinity-tv.net/server/TvServerService/CloseStream.json',
+    data: JSON.stringify({
+        auth: 'bfae2c5899b64063dd9e4e3be9c96d30',
+        stream_id: 2
+    }),
+    dataType: 'json',
+    contentType: "application/json",
+    success: function (status, response, request) {
+        var obj = JSON.parse(request.responseText);
+        console.log('CloseStream', obj);
+    }
+});
 // $.ajax({
 //     beforeSend: function (xhr) {
 //         xhr.setRequestHeader ('Authorization', 'токен');
