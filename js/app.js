@@ -74,7 +74,7 @@ $.ajax({
         var obj = JSON.parse(request.responseText);
         console.log('Auth', obj);
         if (status == 500) {
-            alert('Запрос неверно сформировани или ошибка сервера')
+            alert('Запрос неверно сформировани, ошибка сервера')
         }
     },
     error: function (e) {
@@ -92,6 +92,7 @@ $.ajax({
 });
 
 //////////////////////////////////////////////////////////////////////////
+
 $.ajax({
     type: 'POST',
     url: 'https://tv-server.trinity-tv.net/server/TvServerService/GetChannels.json',
@@ -100,23 +101,87 @@ $.ajax({
         need_icons: true,
         need_epg: true,
         need_offsets: false,
-        need_categories: true
-        // epg_start_offset: 6,
-        // epg_stop_offset: 7,
-        // channels: 5,
-        // category: 9
+        need_categories: true,
+        epg_start_offset: 6,
+        epg_stop_offset: 7,
+        channels: 5,
+        category: 9
     }),
     dataType: 'json',
     contentType: "application/json",
 
-    success: function (status, response, request) {
-        var obj = JSON.parse(request.responseText);
-        console.log('GetChannels', obj);
+    // beforeSend: function(xhr){
+    //     var readystatehook = xhr.onreadystatechange;
+    //
+    //     xhr.onreadystatechange = function(){
+    //         readystatehook.apply(this, []);
+    //         console.log('ul');
+    //     };
+    // },
+    success: function (data) {
+        // data = JSON.parse(request.responseText);
+        console.log('GetChannels', data);
+        // var data = $(response).push($(list.arr[1]).html());
+        // var some = JSON.parse(data);
+        // for( var i=0; i<some.length; i++){
+        //     $('#successPost').text(list);
+        // }
+        // var channels = [];
+        // $('#successPost').text(data.name);
+        //  var  list = function (data) {
+        //     $('#successPost').append(data.list)
+        // }
+        // data = jQuery.parseJSON(data);
+        // $.each(data, function (index, item) {
+        //     $('.channels__list').append('<li>' + item.toString() + '<a>' + item.name + '</a></li>')
+        // });
+        // var out = '';
+        // for (var key in data) {
+        //
+        //         out += '<ul class="channels__list">';
+        //         out += '<li><img src="' + data[key].list[0].icon_url + '" alt=""><h3>' + data[key].list[0].name + '</h3></li>';
+        //         out += '</ul>';
+        //
+        // }
+        // $('#result').html(out);
+
+        // for (var key2 in data[key])
+        //     for (var key3 in data[key][key2])
+        // $('.channels__list').append('<li><img src="${data[key].icon_url}">' + key + '' + data[key]+ '<a>' + ${data[key].name} + '</a></li>')
+
+        // $('.channels__list').append('<li><img src = "">' + data[key][key2].name + '</li>');
+
+        // $('.channels__list').html(data[1][0][9]);
+
+
+        // }
+        // $.each( data, function( key, value ) {
+        //     if($.inArray(list.id, data ) == 0){
+        //         $('.channels__list').append('<li>' + value.icon_url + ": " + value.name + '</li>');
+        //     }
+        // });
+        // var out = '';
+        // for (var icon_url in data) {
+        //     out += `<li><img src = ${data[icon_url]}></li>`
+        // }
+        // $('.channels__list').append(out);
+
+        var out = '';
+        out += '<ul class="channels__list">';
+        out += '<li class="channels__list-item"><img src="' + data.list[0].icon_url + '" alt=""><h2>' + data.list[0].name + '</h2></li>';
+        out += '<li class="channels__list-item"><img src="' + data.list[1].icon_url + '" alt=""><h2>' + data.list[1].name + '</h2></li>';
+        out += '<li class="channels__list-item"><img src="' + data.list[2].icon_url + '" alt=""><h2>' + data.list[2].name + '</h2></li>';
+        out += '</ul>';
+        $('#ch_list').html(out);
+
+        // console.log(data.list[0].name);
     }
     // error: function (e) {
     //     console.log(e);
     // }
+
 });
+
 ///////////////////////////////////////////////////////////////////
 $.ajax({
     type: 'POST',
@@ -132,9 +197,19 @@ $.ajax({
     dataType: 'json',
     contentType: "application/json",
 
-    success: function (status, response, request) {
-        var obj = JSON.parse(request.responseText);
-        console.log('OpenStream', obj);
+    success: function (data) {
+        console.log('OpenStream', data);
+
+        // $('.channels__list-item').on('click', function () {
+
+        var str = '';
+        str += '<video>';
+        str += '<source src="' + data.http_stream.url + '" type="video/mp4">';
+        str += '</video>';
+        // console.log(str);
+        $('#stream').html(str);
+        // });
+
     }
 });
 ////////////////////////////////////////////////
