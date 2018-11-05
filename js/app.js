@@ -171,6 +171,7 @@ $.ajax({
         out += '<li class="channels__list-item"><img src="' + data.list[0].icon_url + '" alt=""><h2>' + data.list[0].name + '</h2></li>';
         out += '<li class="channels__list-item"><img src="' + data.list[1].icon_url + '" alt=""><h2>' + data.list[1].name + '</h2></li>';
         out += '<li class="channels__list-item"><img src="' + data.list[2].icon_url + '" alt=""><h2>' + data.list[2].name + '</h2></li>';
+        out += '<li class="channels__list-item"><img src="' + data.list[3].icon_url + '" alt=""><h2>' + data.list[3].name + '</h2></li>';
         out += '</ul>';
         $('#ch_list').html(out);
 
@@ -183,12 +184,13 @@ $.ajax({
 });
 
 ///////////////////////////////////////////////////////////////////
+
 $.ajax({
     type: 'POST',
     url: 'https://tv-server.trinity-tv.net/server/TvServerService/OpenStream.json',
     data: JSON.stringify({
         auth: 'bfae2c5899b64063dd9e4e3be9c96d30',
-        channel_id: 15,
+        channel_id: parseInt(15),
         offset_id: 3,
         accept_scheme: 'HTTP_HLS',
         first_batch_size: 5
@@ -199,19 +201,25 @@ $.ajax({
 
     success: function (data) {
         console.log('OpenStream', data);
-
         // $('.channels__list-item').on('click', function () {
-
-        var str = '';
-        str += '<video>';
-        str += '<source src="' + data.http_stream.url + '" type="video/mp4">';
-        str += '</video>';
-        // console.log(str);
-        $('#stream').html(str);
+        //
+        //     var str = '';
+        //
+        //     str += '<a href="">';
+        //     str += '<p>' + 'qwerty' + '</p>';
+        //     str += '</a>';
+        // str += '<source src="' +'http://'+ data.http_stream.host.address +':'+ data.http_stream.host.port + data.http_stream.url + '.m3u8' + '" type="video/mp4">';
+        // str += '</video>';
+        // // console.log(str);
+        // $('#stream').html(str);
+        // $('#stream').html(str);
         // });
 
     }
-});
+})
+;
+
+// http://stream.mytrinity.com.ua:4021/stream/rb6bv97j43syj6zz2jtkk96tsvbvspue6m7qkx6e8yb38f5vpv637pprhrq55hf64d66we4duf4dcrx9qzbqcbjt9xb2sd73maapfpv69j3r35kt3cycbi3nxfc5wah82hvqss42d4xce3s.m3u8
 ////////////////////////////////////////////////
 $.ajax({
     type: 'POST',

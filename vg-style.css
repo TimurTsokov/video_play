@@ -47,8 +47,20 @@ html, body {
     font-size: 20px;
 }
 
+h1 {
+    margin-bottom: 0;
+}
+
 h2 {
     margin-bottom: 0;
+}
+
+.flowplayer {
+    background-color: #e3e3e3;
+}
+
+.flowplayer .fp-color-play {
+    fill: #fff;
 }
 
 .videogular-container {

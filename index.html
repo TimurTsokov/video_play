@@ -3,41 +3,84 @@
 <head>
     <meta charset="UTF-8">
     <title>TV-app</title>
+
+    <!--<script src="http://api.html5media.info/1.1.8/html5media.min.js"></script>-->
     <link rel="icon" href="https://www.freeiconspng.com/uploads/player-button-icon-6.png">
 
     <link rel="stylesheet" href="Tabs-Accordion-Plugin-With-jQuery/css/style.css">
     <link rel="stylesheet" href="Tabs-Accordion-Plugin-With-jQuery/css/animate.css">
+
+    <!--<link rel="stylesheet" href="https://releases.flowplayer.org/7.2.7/skin/skin.css">-->
+    <link rel="stylesheet" href="//releases.flowplayer.org/7.0.4/commercial/skin/skin.css">
     <link rel="stylesheet" href="vg-style.css">
+
+    <!--<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>-->
+    <!--<script src="//releases.flowplayer.org/7.0.4/commercial/flowplayer.min.js"></script>-->
+    <!--<script src="//releases.flowplayer.org/hlsjs/flowplayer.hlsjs.min.js"></script>-->
 
 </head>
 <body>
 <div class="main">
     <div class="channels">
         <h1>Channels List:</h1>
-        <div id="ch_list"></div>
-        <!--<ul class="channels__list">-->
-        <!--<li class="channels__list-item"><img src="" alt="">fgytfyfhf</li>-->
-        <!--<li><img src="" alt=""><h3></h3></li>-->
-        <!--<li><img src="" alt=""><h3></h3></li>-->
-        <!--<li><img src="" alt=""><h3></h3></li>-->
-        <!--<li><img src="" alt=""><h3></h3></li>-->
-        <!--<li><img src="" alt=""></li>-->
-        <!--<li><img src="" alt=""></li>-->
-        <!--<li><img src="" alt=""></li>-->
-        <!--<li><img src="" alt=""></li>-->
-        <!--<li><img src="" alt=""></li>-->
-        <!--<li class="channels__list-item" value="7"><a href="#"><img src="" alt="">Интер</a></li>-->
-        <!--<li class="channels__list-item"><a href="#">Sport</a></li>-->
-        <!--<li class="channels__list-item"><a href="#">Inter</a></li>-->
-        <!--<li class="channels__list-item"><a href="#">ICTV</a></li>-->
-        <!--<li class="channels__list-item"><a href="#">Cool</a></li>-->
-        <!--</ul>-->
-        <video>
-            <source src="http://stream.mytrinity.com.ua:4021/stream/bze9cuhtq2c7yef7s9xewc26x78hv266f4fi8k6f3gy82z2ut3hwe3ydqbarwgktay5zikqauqp43wahbykfg7hizi6p9ey9jerwb7v4uev9vs6s9e9tcjaqdkbyrnfwqbbfvj3kt5m39ds.m3u8"
-                    type='video/m3u8' id="video">
-        </video>
-        <div id="stream"></div>
+        <div id="ch_list">
+
+        </div>
     </div>
+    <!--<ul class="channels__list">-->
+    <!--<li class="channels__list-item"><img src="" alt="">fgytfyfhf</li>-->
+    <!--<li><img src="" alt=""><h3></h3></li>-->
+    <!--<li><img src="" alt=""><h3></h3></li>-->
+    <!--<li><img src="" alt=""><h3></h3></li>-->
+    <!--<li><img src="" alt=""><h3></h3></li>-->
+    <!--<li><img src="" alt=""></li>-->
+    <!--<li><img src="" alt=""></li>-->
+    <!--<li><img src="" alt=""></li>-->
+    <!--<li><img src="" alt=""></li>-->
+    <!--<li><img src="" alt=""></li>-->
+    <!--<li class="channels__list-item" value="7"><a href="#"><img src="" alt="">Интер</a></li>-->
+    <!--<li class="channels__list-item"><a href="#">Sport</a></li>-->
+    <!--<li class="channels__list-item"><a href="#">Inter</a></li>-->
+    <!--<li class="channels__list-item"><a href="#">ICTV</a></li>-->
+    <!--<li class="channels__list-item"><a href="#">Cool</a></li>-->
+    <!--</ul>-->
+    <!--<video>-->
+    <!--<source src="http://stream.mytrinity.com.ua:4021/stream/bze9cuhtq2c7yef7s9xewc26x78hv266f4fi8k6f3gy82z2ut3hwe3ydqbarwgktay5zikqauqp43wahbykfg7hizi6p9ey9jerwb7v4uev9vs6s9e9tcjaqdkbyrnfwqbbfvj3kt5m39ds.m3u8"-->
+    <!--type='video/m3u8' id="video">-->
+    <!--</video>-->
+    <div id="stream"></div>
+
+    <!--<div data-live="true" data-ratio="0.5625" data-share="false" class="flowplayer">-->
+
+    <!--<video data-title="Live stream">-->
+    <!--<source type="application/x-mpegurl"-->
+    <!--src="http://stream.mytrinity.com.ua:4021/stream/rb6bv97j43syj6zz2jtkk96tsvbvspue6m7qkx6e8yb38f5vpv637pprhrq55hf64d66we4duf4dcrx9qzbqcbjt9xb2sd73maapfpv69j3r35kt3cycbi3nxfc5wah82hvqss42d4xce3s.m3u8">-->
+    <!--</video>-->
+
+    <!--</div>-->
+    <!--<div id="player"></div>-->
+
+    <!--&lt;!&ndash;<video src=" width="500" height="300" controls preload></video>&ndash;&gt;-->
+
+    <!--<video width="618" height="347" controls preload>-->
+    <!--<source src="http://stream.mytrinity.com.ua:4021/stream/rb6bv97j43syj6zz2jtkk96tsvbvspue6m7qkx6e8yb38f5vpv637pprhrq55hf64d66we4duf4dcrx9qzbqcbjt9xb2sd73maapfpv69j3r35kt3cycbi3nxfc5wah82hvqss42d4xce3s.m3u8" media="only screen and (min-device-width: 568px)" type="application/x-mpegURL">-->
+    <!--</video>-->
+
+    <!--////////////////////////////////////////////////////////////////-->
+    <!--<div class="flowplayer fixed-controls no-toggle no-time play-button obj"-->
+    <!--style=" width: 85.5%;-->
+    <!--height: 80%;-->
+    <!--margin-left: 7.2%;-->
+    <!--margin-top: 6%;-->
+    <!--z-index: 1000;" data-key="$812975748999788" data-live="true" data-share="false" data-ratio="0.5625" data-logo="">-->
+    <!--<video autoplay="true" stretch="true">-->
+
+    <!--<source type="application/x-mpegurl"-->
+    <!--src="ttp://stream.mytrinity.com.ua:4021/stream/rb6bv97j43syj6zz2jtkk96tsvbvspue6m7qkx6e8yb38f5vpv637pprhrq55hf64d66we4duf4dcrx9qzbqcbjt9xb2sd73maapfpv69j3r35kt3cycbi3nxfc5wah82hvqss42d4xce3s">-->
+    <!--</video>-->
+    <!--</div>-->
+    <!--//////////////////////////////////////////////////////////////////-->
+
     <div class="tab_wrapper demo">
         <ul class="tab_list">
             <li class="active">Плеер 1</li>
@@ -89,11 +132,17 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
+
 <!--<script src="Tabs-Accordion-Plugin-With-jQuery/js/jquery-2.1.4.min.js"></script>-->
 <script src="Tabs-Accordion-Plugin-With-jQuery/js/jquery.multipurpose_tabcontent.js"></script>
 
 <script src="node_modules/videogular/dist/videogular/videogular.js"></script>
 <script src="node_modules/videogular/dist/controls/vg-controls.js"></script>
+<script src="bower-videogular-hls-master/vg-hls.js"></script>
+
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.10.1/hls.light.min.js"></script>-->
+<!--<script src="https://releases.flowplayer.org/7.2.7/flowplayer.min.js"></script>-->
+
 
 <script src="js/player.js"></script>
 <script src="js/app.js"></script>
@@ -103,5 +152,34 @@
         $(".demo").champ();
     })
 </script>
+<!--<script>-->
+<!--flowplayer('#player', {-->
+<!--live: true,  // set if it's a live stream-->
+<!--ratio: 9 / 16, // set the aspect ratio of the stream-->
+<!--clip: {-->
+<!--sources: [-->
+<!--// path to the HLS m3u8-->
+<!--{type: "application/x-mpegurl", src: "http://stream.mytrinity.com.ua:4021/stream/rb6bv97j43syj6zz2jtkk96tsvbvspue6m7qkx6e8yb38f5vpv637pprhrq55hf64d66we4duf4dcrx9qzbqcbjt9xb2sd73maapfpv69j3r35kt3cycbi3nxfc5wah82hvqss42d4xce3s.m3u8"}-->
+<!--// path to an optional MP4 fallback, usually not available for live feeds-->
+<!--//                { type: "video/mp4", src: "//yourserver/path/index.mp4"}-->
+<!--]-->
+<!--}-->
+<!--});-->
+<!--</script>-->
+<!--<script>-->
+<!--flowplayer(function (api) {-->
+<!--api.on("load", function (e, api, video) {-->
+<!--$("#vinfo").text(api.engine.engineName + " engine playing " + video.type);-->
+<!--});-->
+<!--});-->
+<!--</script>-->
+<!--<script type="text/javascript">-->
+<!--function runProgram(){-->
+<!--var shell = new ActiveXObject("WScript.Shell");-->
+<!--var appWinMerge = "\"C:\\Program Files\\VideoLAN\\VLC\\vlc.exe\" ";-->
+
+<!--shell.Run(appWinMerge);-->
+<!--}-->
+<!--</script>-->
 </body>
 </html>

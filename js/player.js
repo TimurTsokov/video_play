@@ -12,8 +12,8 @@ angular.module('myApp',
                 preload: "none",
                 sources: [
                     {
-                        src: $sce.trustAsResourceUrl("http://stream.mytrinity.com.ua:4021/stream/bze9cuhtq2c7yef7s9xewc26x78hv266f4fi8k6f3gy82z2ut3hwe3ydqbarwgktay5zikqauqp43wahbykfg7hizi6p9ey9jerwb7v4uev9vs6s9e9tcjaqdkbyrnfwqbbfvj3kt5m39ds.m3u8"),
-                        type: "video/m3u8"
+                        src: $sce.trustAsResourceUrl("http://stream.mytrinity.com.ua:4021/stream/rb6bv97j43syj6zz2jtkk96tsvbvspue6m7qkx6e8yb38f5vpv637pprhrq55hf64d66we4duf4dcrx9qzbqcbjt9xb2sd73maapfpv69j3r35kt3cycbi3nxfc5wah82hvqss42d4xce3s"),
+                        type: "application/x-mpegURL"
                     }
                 ],
                 tracks: [
@@ -37,7 +37,10 @@ angular.module('myApp',
             this.config = {
                 preload: "none",
                 sources: [
-                    {src: $sce.trustAsResourceUrl(""), type: "video/mp4"}
+                    {
+                        src: $sce.trustAsResourceUrl("http://stream.mytrinity.com.ua:4021/stream/rb6bv97j43syj6zz2jtkk96tsvbvspue6m7qkx6e8yb38f5vpv637pprhrq55hf64d66we4duf4dcrx9qzbqcbjt9xb2sd73maapfpv69j3r35kt3cycbi3nxfc5wah82hvqss42d4xce3s"),
+                        type: "application/x-mpegURL"
+                    }
                 ],
                 theme: {
                     url: "https://unpkg.com/videogular@2.1.2/dist/themes/default/videogular.css"
