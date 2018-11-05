@@ -190,7 +190,7 @@ $.ajax({
         auth: 'bfae2c5899b64063dd9e4e3be9c96d30',
         channel_id: 15,
         offset_id: 3,
-        accept_scheme: 4,
+        accept_scheme: 'HTTP_HLS',
         first_batch_size: 5
 
     }),

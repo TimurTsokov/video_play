@@ -11,7 +11,10 @@ angular.module('myApp',
             this.config = {
                 preload: "none",
                 sources: [
-                    {src: $sce.trustAsResourceUrl(""), type: "video/mp4"}
+                    {
+                        src: $sce.trustAsResourceUrl("http://stream.mytrinity.com.ua:4021/stream/bze9cuhtq2c7yef7s9xewc26x78hv266f4fi8k6f3gy82z2ut3hwe3ydqbarwgktay5zikqauqp43wahbykfg7hizi6p9ey9jerwb7v4uev9vs6s9e9tcjaqdkbyrnfwqbbfvj3kt5m39ds.m3u8"),
+                        type: "video/m3u8"
+                    }
                 ],
                 tracks: [
                     {
