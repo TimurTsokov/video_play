@@ -168,10 +168,10 @@ $.ajax({
 
         var out = '';
         out += '<ul class="channels__list">';
-        out += '<li class="channels__list-item"><img src="' + data.list[0].icon_url + '" alt=""><h2>' + data.list[0].name + '</h2></li>';
-        out += '<li class="channels__list-item"><img src="' + data.list[1].icon_url + '" alt=""><h2>' + data.list[1].name + '</h2></li>';
-        out += '<li class="channels__list-item"><img src="' + data.list[2].icon_url + '" alt=""><h2>' + data.list[2].name + '</h2></li>';
-        out += '<li class="channels__list-item"><img src="' + data.list[3].icon_url + '" alt=""><h2>' + data.list[3].name + '</h2></li>';
+        out += '<li class="channels__list-item"><a href="https://turbo.net/run/videolan/vlc" target="_blank"><img src="' + data.list[0].icon_url + '" alt=""><h2>' + data.list[0].name + '</h2></a></li>';
+        out += '<li class="channels__list-item"><a href="https://turbo.net/run/videolan/vlc" target="_blank"><img src="' + data.list[1].icon_url + '" alt=""><h2>' + data.list[1].name + '</h2></a></li>';
+        out += '<li class="channels__list-item"><a href="https://turbo.net/run/videolan/vlc" target="_blank"><img src="' + data.list[2].icon_url + '" alt=""><h2>' + data.list[2].name + '</h2></a></li>';
+        out += '<li class="channels__list-item"><a href="https://turbo.net/run/videolan/vlc" target="_blank"><img src="' + data.list[3].icon_url + '" alt=""><h2>' + data.list[3].name + '</h2></a></li>';
         out += '</ul>';
         $('#ch_list').html(out);
 
@@ -201,6 +201,8 @@ $.ajax({
 
     success: function (data) {
         console.log('OpenStream', data);
+        // $('#stream').text(data);
+
         // $('.channels__list-item').on('click', function () {
         //
         //     var str = '';
@@ -216,9 +218,7 @@ $.ajax({
         // });
 
     }
-})
-;
-
+});
 // http://stream.mytrinity.com.ua:4021/stream/rb6bv97j43syj6zz2jtkk96tsvbvspue6m7qkx6e8yb38f5vpv637pprhrq55hf64d66we4duf4dcrx9qzbqcbjt9xb2sd73maapfpv69j3r35kt3cycbi3nxfc5wah82hvqss42d4xce3s.m3u8
 ////////////////////////////////////////////////
 $.ajax({

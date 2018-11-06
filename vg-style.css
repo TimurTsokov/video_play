@@ -32,6 +32,7 @@ html, body {
 
 .channels__list-item img {
     width: 70%;
+    padding-right: 10%;
 }
 
 .channels__list-item:hover,
@@ -53,8 +54,14 @@ h1 {
 
 h2 {
     margin-bottom: 0;
+    font-size: 1.5vw;
 }
 
+a {
+    list-style-type: none;
+    text-decoration: none;
+    text-align: center;
+}
 .flowplayer {
     background-color: #e3e3e3;
 }
