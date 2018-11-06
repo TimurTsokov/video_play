@@ -32,7 +32,7 @@ html, body {
 
 .channels__list-item img {
     width: 70%;
-    padding-right: 10%;
+    padding-right: 15%;
 }
 
 .channels__list-item:hover,
