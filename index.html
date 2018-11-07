@@ -157,22 +157,22 @@
     })
 </script>
 
-<script>
-    var video = document.getElementById('video');
-    if (Hls.isSupported()) {
-        var hls = new Hls();
-        hls.loadSource('http://stream.mytrinity.com.ua:4021/stream/vu6cf78qwk4kff9ndhzvks7rcvw4hr57inn26szmnk2xfg7wn933wc4wqgptdugks6fur8573bsxi23rnr953fw8z7dnv44vwwrxxewx9wfuvadz855eebghf9n63bbg7d76357hw6takgs.m3u8');
-        hls.attachMedia(video);
-        hls.on(Hls.Events.MANIFEST_PARSED, function () {
-            video.play();
-        });
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-        video.src = 'http://stream.mytrinity.com.ua:4021/stream/vu6cf78qwk4kff9ndhzvks7rcvw4hr57inn26szmnk2xfg7wn933wc4wqgptdugks6fur8573bsxi23rnr953fw8z7dnv44vwwrxxewx9wfuvadz855eebghf9n63bbg7d76357hw6takgs.m3u8';
-        video.addEventListener('loadedmetadata', function () {
-            video.play();
-        });
-    }
-</script>
+<!--<script>-->
+<!--var video = document.getElementById('video');-->
+<!--if (Hls.isSupported()) {-->
+<!--var hls = new Hls();-->
+<!--hls.loadSource('http://stream.mytrinity.com.ua:4021/stream/vu6cf78qwk4kff9ndhzvks7rcvw4hr57inn26szmnk2xfg7wn933wc4wqgptdugks6fur8573bsxi23rnr953fw8z7dnv44vwwrxxewx9wfuvadz855eebghf9n63bbg7d76357hw6takgs.m3u8');-->
+<!--hls.attachMedia(video);-->
+<!--hls.on(Hls.Events.MANIFEST_PARSED, function () {-->
+<!--video.play();-->
+<!--});-->
+<!--} else if (video.canPlayType('application/vnd.apple.mpegurl')) {-->
+<!--video.src = 'http://stream.mytrinity.com.ua:4021/stream/vu6cf78qwk4kff9ndhzvks7rcvw4hr57inn26szmnk2xfg7wn933wc4wqgptdugks6fur8573bsxi23rnr953fw8z7dnv44vwwrxxewx9wfuvadz855eebghf9n63bbg7d76357hw6takgs.m3u8';-->
+<!--video.addEventListener('loadedmetadata', function () {-->
+<!--video.play();-->
+<!--});-->
+<!--}-->
+<!--</script>-->
 
 
 <!--<script>-->

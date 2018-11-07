@@ -226,6 +226,7 @@
             //     setInterval('updateStream()', data.update_interval[i]);
             // }
 
+
         }
     });
 
