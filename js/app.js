@@ -206,7 +206,9 @@
         success: function (data) {
             console.log('OpenStream', data);
             // $('#stream').text(data);
-
+            var add = '';
+            add += '<div>' + 'http://' + data.http_stream.host.address + ':' + data.http_stream.host.port + data.http_stream.url + '</div>';
+            $('#address').html(add);
             // $('.channels__list-item').on('click', function () {
             //
             //     var str = '';
@@ -220,9 +222,9 @@
             // $('#stream').html(str);
             // $('#stream').html(str);
             // });
-            for (var i in data.update_interval) {
-                setInterval('updateStream()', data.update_interval[i]);
-            }
+            // for (var i in data.update_interval) {
+            //     setInterval('updateStream()', data.update_interval[i]);
+            // }
 
         }
     });
@@ -241,10 +243,11 @@
         }),
         dataType: 'json',
         contentType: "application/json",
-        success: function (status, response, request) {
-            var obj = JSON.parse(request.responseText);
-            console.log('UpdateStream', obj);
-
+        success: function (data, status, response, request) {
+            // var obj = JSON.parse(request.responseText);
+            console.log('UpdateStream', data);
+            // console.log('UpdateStream', obj);
+            // $('video').updateStream(data);
         }
     });
 })();
@@ -261,10 +264,10 @@
         }),
         dataType: 'json',
         contentType: "application/json",
-        success: function (status, response, request) {
-            var obj = JSON.parse(request.responseText);
-            console.log('CloseStream', obj);
-
+        success: function (data, status, response, request) {
+            // var obj = JSON.parse(request.responseText);
+            // console.log('CloseStream', obj);
+            console.log('CloseStream', data);
             // if (data.ReopenStream) {
             //     closeStream();
             // }

@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="Tabs-Accordion-Plugin-With-jQuery/css/animate.css">
 
     <!--<link rel="stylesheet" href="https://releases.flowplayer.org/7.2.7/skin/skin.css">-->
-    <link rel="stylesheet" href="//releases.flowplayer.org/7.0.4/commercial/skin/skin.css">
+    <!--<link rel="stylesheet" href="//releases.flowplayer.org/7.0.4/commercial/skin/skin.css">-->
     <link rel="stylesheet" href="vg-style.css">
 
     <!--<script src="//code.jquery.com/jquery-1.12.4.min.js"></script>-->
@@ -26,7 +26,9 @@
         <div id="ch_list">
 
         </div>
+        <div id="address"></div>
     </div>
+
     <!--<ul class="channels__list">-->
     <!--<li class="channels__list-item"><img src="" alt="">fgytfyfhf</li>-->
     <!--<li><img src="" alt=""><h3></h3></li>-->
@@ -126,6 +128,7 @@
         </div>
     </div>
 </div>
+<video id="video"></video>
 
 <script src="node_modules/angular/angular.min.js"></script>
 <script src="node_modules/angular/angular-sanitize.min.js"></script>
@@ -142,6 +145,7 @@
 
 <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/0.10.1/hls.light.min.js"></script>-->
 <!--<script src="https://releases.flowplayer.org/7.2.7/flowplayer.min.js"></script>-->
+<script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
 
 
 <script src="js/player.js"></script>
@@ -152,6 +156,25 @@
         $(".demo").champ();
     })
 </script>
+
+<script>
+    var video = document.getElementById('video');
+    if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource('http://stream.mytrinity.com.ua:4021/stream/vu6cf78qwk4kff9ndhzvks7rcvw4hr57inn26szmnk2xfg7wn933wc4wqgptdugks6fur8573bsxi23rnr953fw8z7dnv44vwwrxxewx9wfuvadz855eebghf9n63bbg7d76357hw6takgs.m3u8');
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function () {
+            video.play();
+        });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = 'http://stream.mytrinity.com.ua:4021/stream/vu6cf78qwk4kff9ndhzvks7rcvw4hr57inn26szmnk2xfg7wn933wc4wqgptdugks6fur8573bsxi23rnr953fw8z7dnv44vwwrxxewx9wfuvadz855eebghf9n63bbg7d76357hw6takgs.m3u8';
+        video.addEventListener('loadedmetadata', function () {
+            video.play();
+        });
+    }
+</script>
+
+
 <!--<script>-->
 <!--flowplayer('#player', {-->
 <!--live: true,  // set if it's a live stream-->
