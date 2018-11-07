@@ -208,7 +208,9 @@
             // $('#stream').text(data);
             var add = '';
             add += '<div>' + 'http://' + data.http_stream.host.address + ':' + data.http_stream.host.port + data.http_stream.url + '</div>';
+
             $('#address').html(add);
+
             // $('.channels__list-item').on('click', function () {
             //
             //     var str = '';
@@ -225,7 +227,6 @@
             // for (var i in data.update_interval) {
             //     setInterval('updateStream()', data.update_interval[i]);
             // }
-
 
         }
     });
